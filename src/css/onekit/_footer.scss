@@ -1,0 +1,127 @@
+/*------------------------------------
+  Footer
+------------------------------------*/
+.footer {
+  &-light {
+    color: var(--#{$prefix}dark-light);
+    .footer-links {
+      a {
+        color: var(--#{$prefix}dark-light);
+        &:hover {
+          color: var(--#{$prefix}link-color);
+        }
+      }
+      ul {
+        li {
+          a {
+            color: var(--#{$prefix}dark-light);
+            &:hover {
+              color: var(--#{$prefix}link-color);
+            }
+          }
+        }
+      }
+    }
+    .border-smooth, hr {
+      border-color: $border-smooth-light;
+    }
+    .before-arrow {
+      li{
+        &::before {
+          @include before-footer-category-light();
+          transform: $rotate-n90;
+        }
+      }
+    }
+  }
+  &-dark {
+    color: var(--#{$prefix}gray-300);
+    .h1, .h2, .h3, .h4, .h5, .h6, .h7,
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--#{$prefix}white);
+      a {
+        color: var(--#{$prefix}gray-300);
+        &:hover {
+          color: var(--#{$prefix}white);
+        }
+      }
+    }
+    .footer-links {
+      a {
+        color: var(--#{$prefix}gray-300);
+        &:hover {
+          color: var(--#{$prefix}white);
+        }
+      }
+      ul {
+        li {
+          a {
+            color: var(--#{$prefix}gray-300);
+            &:hover {
+              color: var(--#{$prefix}white);
+            }
+          }
+        }
+      }
+    }
+    .border-smooth, hr {
+      border-color: var(--#{$prefix}gray-200)
+    }
+    .before-arrow {
+      li{
+        &::before {
+          @include before-footer-category-dark();
+          transform: $rotate-n90;
+        }
+      }
+    }
+  }
+}
+.widget-content {
+  padding-bottom: $widget-content-padding-bottom;
+}
+.social-icon {
+  li {
+    display: inline-block;
+  }
+}
+.before-arrow {
+  li{
+    &::before {
+      display: inline-block;
+      width: $before-arrow-width;
+      height: $before-arrow-height;
+      content: "";
+      background-repeat: no-repeat;
+      background-size: $before-arrow-size $before-arrow-size;
+      margin-right: $before-arrow-margin-right;
+    }
+  }
+}
+
+// mobile block footer menu
+@include media-breakpoint-down(md) {
+  .footer-copyright{
+    .navbar {
+      -ms-flex-flow: column;
+      flex-flow: column;
+      .navbar-nav {
+        margin-left: inherit !important;
+        &.footer-nav {
+          width: 100%;
+          flex-direction: inherit;
+          margin-bottom: $footer-nav-margin-bottom;
+          li {
+            a {
+              width: 100%;
+              padding: $footer-nav-a-padding-y 0;
+              &:hover {
+                color: var(--#{$prefix}white);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

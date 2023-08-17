@@ -1,0 +1,42 @@
+/*------------------------------------
+ Sidebar
+------------------------------------*/
+.side-links, .side-link, .sidebar-link {
+	li {
+		a {
+		    color: var(--#{$prefix}gray-600);
+		    &.caret-collapse{
+					--bs-bg-opacity: 1;
+					color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+			}
+			&.caret-collapse.collapsed{
+				color: var(--#{$prefix}gray-700);
+				&:hover{
+					--bs-bg-opacity: 1;
+					color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+				}
+			}
+			&:hover, &.active{
+				background-color: transparent;
+				--bs-bg-opacity: 1;
+					color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+			}
+		}
+	}
+	&>a {
+		color: var(--#{$prefix}gray-600);
+		&:hover {
+			--bs-bg-opacity: 1;
+					color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+		}
+	}
+}
+.sidebar-link {
+	li {
+		a {
+			display: block;
+			font-size: $sidebar-link-font-size;
+			padding: $sidebar-link-padding;
+		}
+	}
+}
